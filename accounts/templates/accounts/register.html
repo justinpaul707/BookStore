@@ -1,0 +1,41 @@
+{% extends 'book/shared/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<h1 class="text-center">Register</h1>
+<div class="conatiner">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label>{{form.first_name.label}}</label>
+                    {{form.first_name}}
+                    {{ form.form.first_name.errors}}
+                </div>
+                <div class="form-group">
+                    <label>{{form.last_name.label}}</label>
+                    {{form.last_name}}
+                    {{ form.last_name.errors}}
+                </div>
+                <div class="form-group">
+                    <label>{{form.email.label}}</label>
+                    {{form.email}}
+                    {{ form.email.errors}}
+                </div>
+                <div class="form-group">
+                    <label>{{form.password.label}}</label>
+                    {{form.password}}
+                    {{ form.password.errors}}
+                </div>
+                
+                <div class="form-group d-flex">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary ml-auto">Register</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
